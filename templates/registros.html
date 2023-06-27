@@ -40,7 +40,16 @@
         tr:hover {
             background-color: #EEE8AA;
         }
+
+        .print-button {
+            margin-top: 20px;
+        }
     </style>
+    <script>
+        function imprimirPagina() {
+            window.print();
+        }
+    </script>
 </head>
 
 <body>
@@ -61,6 +70,7 @@
             {% endfor %}
         </tbody>
     </table>
+    <button class="print-button" onclick="imprimirPagina()">Imprimir</button>
 </body>
 
 </html>

@@ -13,7 +13,13 @@ def index():
         telefono = request.form["telefono"]
         guardar_visita(telefono)
         count = contar_visitas(telefono)
-        return render_template("index.html", count=count)
+
+        mensaje = ""
+        if count % 5 == 0:
+            mensaje = "¡Te has ganado un café!"
+
+        return render_template("index.html", count=count, mensaje=mensaje)
+
     return render_template("index.html")
 
 

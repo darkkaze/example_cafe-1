@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Registro de Visitas</title>
     <style>
@@ -8,21 +9,21 @@
             font-family: Arial, sans-serif;
             text-align: center;
         }
-        
+
         h1 {
             color: #8B4513;
             margin-top: 50px;
         }
-        
+
         form {
             margin-top: 30px;
         }
-        
+
         label {
             color: #8B4513;
             font-size: 18px;
         }
-        
+
         input[type="text"] {
             padding: 10px;
             width: 250px;
@@ -30,7 +31,7 @@
             border: 1px solid #8B4513;
             font-size: 16px;
         }
-        
+
         input[type="submit"] {
             padding: 10px 20px;
             background-color: #8B4513;
@@ -40,7 +41,7 @@
             font-size: 16px;
             cursor: pointer;
         }
-        
+
         p {
             color: #8B4513;
             font-size: 18px;
@@ -48,6 +49,7 @@
         }
     </style>
 </head>
+
 <body>
     <h1>Registro de Visitas</h1>
     <form action="/" method="post">
@@ -59,7 +61,11 @@
         <input type="submit" value="Guardar Visita">
     </form>
     {% if count %}
-        <p>Visitas registradas: {{ count }}</p>
+    <p>Visitas registradas: {{ count }}</p>
+    {% endif %}
+    {% if mensaje %}
+    <p>{{ mensaje }}</p>
     {% endif %}
 </body>
+
 </html>
