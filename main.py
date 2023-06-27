@@ -17,6 +17,16 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/registros", methods=["GET"])
+def mostrar_registros():
+    conn = sqlite3.connect("cafeteria.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT telefono, COUNT(*) AS conteo FROM visitas GROUP BY telefono")
+    registros = cursor.fetchall()
+    conn.close()
+    return render_template("registros.html", registros=registros)
+
+
 # Guardar visita en la base de datos
 def guardar_visita(telefono):
     conn = sqlite3.connect("cafeteria.db")
